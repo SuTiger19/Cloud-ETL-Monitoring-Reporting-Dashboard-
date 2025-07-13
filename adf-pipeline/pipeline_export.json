@@ -1,0 +1,19 @@
+{
+  "name": "CustomerTransactionETL",
+  "properties": {
+    "activities": [
+      {
+        "name": "CopyCustomers",
+        "type": "Copy",
+        "inputs": [{ "referenceName": "SqlSource_Customers", "type": "DatasetReference" }],
+        "outputs": [{ "referenceName": "AzureBlob_Customers", "type": "DatasetReference" }]
+      },
+      {
+        "name": "CopyTransactions",
+        "type": "Copy",
+        "inputs": [{ "referenceName": "SqlSource_Transactions", "type": "DatasetReference" }],
+        "outputs": [{ "referenceName": "AzureBlob_Transactions", "type": "DatasetReference" }]
+      }
+    ]
+  }
+}
